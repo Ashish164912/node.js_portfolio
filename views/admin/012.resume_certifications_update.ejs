@@ -1,0 +1,43 @@
+<%- include("01.header.ejs") %>
+
+    <div class="row bg-white ">
+        <h3 style="font-family:  sans-serif;" class="text-secondary"></h3>
+        <h4 class="text-secondary mb-2">Education update Page</h4>
+        <div class="col-md-12 " style="border-radius: 20px;box-shadow: inset 0px 0px 10px black;">
+            <form action="/admin/update_certifications_resume" method="post" enctype="multipart/form-data">
+
+
+                <div class="row p-2">
+
+                   
+                    <div class=" col">
+                        <label class="mb-2 pt-2 text-dark">Certifications Name</label>
+                        <input type="text" class="form-control border border-danger" name="id" value="<%=  resume_certifications.id %>" hidden>
+
+                        <input type="text" class="form-control border border-danger" name="resume_certi_name"
+                        value="<%=  resume_certifications.resume_certi_name %>">
+
+                    </div>
+                    <div class="col">
+                        <label class="mb-2 pt-2 text-dark">Certifications Date</label>
+                        <input type="text" class="form-control border border-danger" name="resume_certi_date"
+                        value="<%=  resume_certifications.resume_certi_date %>">
+                    </div>
+                   
+                </div>
+
+             
+
+                    <div class="row p-4">
+                        <div class="col text-center">
+
+                            <button class="btn btn-success">update resume certifications</button>
+                        </div>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <%- include("02.footer.ejs") %>

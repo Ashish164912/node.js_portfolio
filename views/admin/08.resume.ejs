@@ -1,0 +1,491 @@
+<%- include("01.header.ejs") %>
+
+    <div class="row bg-white ">
+        <h3 style="font-family:  sans-serif;" class="text-secondary"></h3>
+        <h4 class="text-secondary mb-2">Resume Details Page</h4>
+        <div class="col-md-12 " style="border-radius: 20px;box-shadow: inset 0px 0px 10px black;">
+            <form action="/admin/save_resume" method="post" enctype="multipart/form-data">
+
+                <div class="row p-2">
+
+                    <div class="col">
+                        <label class="mb-2 pt-2 text-dark">Resume information</label>
+                        <textarea class="form-control border border-danger" name="resume_information"></textarea>
+
+                    </div>
+                </div>
+
+                <div class="row p-2">
+
+                    <div class="col">
+                        <label class="mb-2 pt-2 text-dark">Resume Photo</label>
+                        <input type="file" class="form-control border border-danger" name="resume_photo">
+
+                    </div>
+                    <div class=" col">
+                        <label class="mb-2 pt-2 text-dark">Professional Summary Name</label>
+                        <input type="text" class="form-control border border-danger" name="resume_profe_summary">
+
+                    </div>
+                    <div class="col">
+                        <label class="mb-2 pt-2 text-dark">Professional Summary Description</label>
+                        <input type="text" class="form-control border border-danger" name="resume_prof_sum_decript">
+                    </div>
+
+
+                    <div class="row p-2">
+                        <h4>Contact Information</h4>
+                        <div class="col text-center">
+                            <label class="mb-2 pt-2 text-dark">Contact Information Name</label>
+                            <input type="text" class="form-control border border-danger" name="resume_contact_info">
+
+                        </div>
+
+                        <div class="col text-center">
+                            <label class="mb-2 pt-2 text-dark">Linkedin Link</label>
+                            <input type="text" class="form-control border border-danger" name="resume_linkedin_url">
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="row p-2">
+                        <h4>Technical Skills</h4>
+                        <div class="col ">
+                            <label class="mb-2 pt-2 text-dark">Technical Skill Name</label>
+                            <input type="text" class="form-control border border-danger"
+                                name="resume_technical_skill_tech">
+
+                        </div>
+
+                        <div class="col ">
+                            <label class="mb-2 pt-2 text-dark">Technical Skill (percentage)</label>
+                            <input type="text" class="form-control border border-danger"
+                                name="resume_tech_prog_bar_per">
+
+                        </div>
+
+                    </div>
+
+                    <div class="row p-2">
+                        <h4>Professional Experience</h4>
+                        <div class="col ">
+                            <label class="mb-2 pt-2 text-dark">Professional Experience Title</label>
+                            <input type="text" class="form-control border border-danger" name="resume_prof_Expe_title">
+
+                        </div>
+
+                        <div class="col ">
+                            <label class="mb-2 pt-2 text-dark">Present Date</label>
+                            <input type="text" class="form-control border border-danger" name="resume_present_date">
+
+                        </div>
+
+                        <div class="col ">
+                            <label class="mb-2 pt-2 text-dark">Company Name</label>
+                            <input type="text" class="form-control border border-danger" name="resume_company_name">
+
+                        </div>
+
+                    </div>
+
+                    <div class="row p-2">
+                        <div class="col ">
+                            <label class="mb-2 pt-2 text-dark">Professional decription</label>
+                            <textarea class="form-control border border-danger"
+                                name="resume_prof_decription"></textarea>
+
+                        </div>
+                    </div>
+
+                    <div class="row p-2">
+                        <h4>Education</h4>
+                        <div class="col ">
+                            <label class="mb-2 pt-2 text-dark">Education Name</label>
+                            <input type="text" class="form-control border border-danger" name="resume_education_name">
+
+                        </div>
+
+                        <div class="col ">
+                            <label class="mb-2 pt-2 text-dark">Education Date</label>
+                            <input type="text" class="form-control border border-danger" name="resume_education_date">
+
+                        </div>
+
+                        <div class="col ">
+                            <label class="mb-2 pt-2 text-dark">University Name</label>
+                            <input type="text" class="form-control border border-danger" name="resume_university_name">
+
+                        </div>
+
+                    </div>
+
+                    <div class="row p-2">
+                        <div class="col ">
+                            <label class="mb-2 pt-2 text-dark">Education Short decription</label>
+                            <textarea class="form-control border border-danger"
+                                name="resume_education_decript"></textarea>
+
+                        </div>
+                    </div>
+
+
+                    <div class="row p-2">
+                        <h4>Certifications</h4>
+                        <div class="col ">
+                            <label class="mb-2 pt-2 text-dark">Certifications Name</label>
+                            <input type="text" class="form-control border border-danger" name="resume_certi_name">
+
+                        </div>
+
+                        <div class="col ">
+                            <label class="mb-2 pt-2 text-dark">Certifications Date</label>
+                            <input type="text" class="form-control border border-danger" name="resume_certi_date">
+
+                        </div>
+
+                    </div>
+
+                    <div class="row p-4">
+                        <div class="col text-center">
+
+                            <button class="btn btn-success">Save resume</button>
+                        </div>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="row bg-white mt-4">
+        <h3 style="font-family:  sans-serif;" class="text-secondary">resume top part update page </h3>
+        <h4 class="text-dark">resume page Update</h4>
+        <div class="col-md-12 " style="border-radius: 20px;box-shadow: inset 0px 0px 10px black;">
+
+            <div class="row p-2">
+                <div class="col text-center" style="height: 420px;overflow: auto;">
+                    <label class="mb-2 pt-2 text-dark "><b>resume top part Edits</b></label>
+                    <table class="table table-dark table-hover">
+                        <thead>
+                            <tr>
+                                <th>Sr No</th>
+                                <th>Resume information</th>
+                                <th>Resume Photo</th>
+                                <th>Professional Summary Name</th>
+                                <th>Professional Summary Description</th>
+                                <th>Contact Information Name</th>
+                                <th>Linkedin Link</th>
+                                <th colspan="2">Action</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <% for(let i=0; i<resultresume.length ; i++) { %>
+                                    <td>
+                                        <%= i + 1 %>
+                                    </td>
+                                    <td>
+                                        <%= resultresume[i].resume_information %>
+                                    </td>
+                                    <td>
+                                        <img src="/uploads/<%= resultresume[i].resume_photo %>" height="80px">
+                                    </td>
+                                    <td>
+                                        <%= resultresume[i].resume_profe_summary %>
+                                    </td>
+                                    <td>
+                                        <%= resultresume[i].resume_prof_sum_decript %>
+                                    </td>
+                                    <td>
+                                        <%= resultresume[i].resume_contact_info %>
+                                    </td>
+                                    <td>
+                                        <%= resultresume[i].resume_linkedin_url %>
+                                    </td>
+                                    <td>
+                                        <a href="/admin/resume_top_part_edit/<%= resultresume[i].id %>">
+                                            <i class="ti ti-edit text-success h3" title="Go To Edit Page"></i>
+                                        </a>
+
+                                    </td>
+                                    <!-- <td>
+                                       <a href="/admin/resume_top_part_delete/<%= resultresume[i].id %>">
+                                        <i class="ti ti-trash text-success h3" title="Go To Edit Page"></i>
+                                    </a>
+                                </td> -->
+
+
+                            </tr>
+                        </tbody>
+
+                        <% } %>
+                    </table>
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="row bg-white mt-5">
+        <h3 style="font-family:  sans-serif;" class="text-secondary">Technical skill update page </h3>
+        <h4 class="text-dark">Technical skill Update</h4>
+        <div class="col-md-12 " style="border-radius: 20px;box-shadow: inset 0px 0px 10px black;">
+
+            <div class="row p-2">
+                <div class="col text-center" style="height: 300px;overflow: auto;">
+                    <label class="mb-2 pt-2 text-dark "><b>Technical skill Edits</b></label>
+                    <table class="table table-dark table-hover">
+                        <thead>
+                            <tr>
+                                <th>Sr No</th>
+                                <th>Technical Skill Name</th>
+                                <th>Technical Skill (percentage)</th>
+
+                                <th colspan="2">Action</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <% for(let i=0; i<resultresume.length ; i++) { %>
+                                    <td>
+                                        <%= i + 1 %>
+                                    </td>
+                                    <td>
+                                        <%= resultresume[i].resume_technical_skill_tech %>
+                                    </td>
+
+                                    <td>
+                                        <%= resultresume[i].resume_tech_prog_bar_per %>
+                                    </td>
+
+                                    <td>
+                                        <a href="/admin/resume_technical_part_edit/<%= resultresume[i].id %>">
+                                            <i class="ti ti-edit text-success h3" title="Go To Edit Page"></i>
+                                        </a>
+
+                                    </td>
+                                    <td>
+                                        <a href="/admin/resume_technical_part_delete/<%= resultresume[i].id %>">
+                                            <i class="ti ti-trash text-success h3" title="Go To Edit Page"></i>
+                                        </a>
+                                    </td>
+
+
+                            </tr>
+                        </tbody>
+
+                        <% } %>
+                    </table>
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="row bg-white mt-5">
+        <h3 style="font-family:  sans-serif;" class="text-secondary">resume Professional Experience update page </h3>
+        <h4 class="text-dark">resume Professional Experience page Update</h4>
+        <div class="col-md-12 " style="border-radius: 20px;box-shadow: inset 0px 0px 10px black;">
+
+            <div class="row p-2">
+                <div class="col text-center" style="height: 420px;overflow: auto;">
+                    <label class="mb-2 pt-2 text-dark "><b>resume Professional Experience Edits</b></label>
+                    <table class="table table-dark table-hover">
+                        <thead>
+                            <tr>
+                                <th>Sr No</th>
+                                <th>Professional Experience Title</th>
+                                <th>Present Date</th>
+                                <th>Company Name</th>
+                                <th>Professional decription</th>
+
+                                <th colspan="2">Action</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <% for(let i=0; i<resultresume.length ; i++) { %>
+                                    <td>
+                                        <%= i + 1 %>
+                                    </td>
+                                    <td>
+                                        <%= resultresume[i].resume_prof_Expe_title %>
+                                    </td>
+                              
+                                    <td>
+                                        <%= resultresume[i].resume_present_date %>
+                                    </td>
+                                    <td>
+                                        <%= resultresume[i].resume_company_name %>
+                                    </td>
+                                    <td>
+                                        <%= resultresume[i].resume_prof_decription %>
+                                    </td>
+                                  
+                                    <td>
+                                        <a href="/admin/resume_profe_exp_edit/<%= resultresume[i].id %>">
+                                            <i class="ti ti-edit text-success h3" title="Go To Edit Page"></i>
+                                        </a>
+
+                                    </td>
+                                    <!-- <td>
+                                       <a href="/admin/resume_top_part_delete/<%= resultresume[i].id %>">
+                                        <i class="ti ti-trash text-success h3" title="Go To Edit Page"></i>
+                                    </a>
+                                </td> -->
+
+
+                            </tr>
+                        </tbody>
+
+                        <% } %>
+                    </table>
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+
+    <div class="row bg-white mt-5">
+        <h3 style="font-family:  sans-serif;" class="text-secondary">resume Education update page </h3>
+        <h4 class="text-dark">resume Education page Update</h4>
+        <div class="col-md-12 " style="border-radius: 20px;box-shadow: inset 0px 0px 10px black;">
+
+            <div class="row p-2">
+                <div class="col text-center" style="height: 420px;overflow: auto;">
+                    <label class="mb-2 pt-2 text-dark "><b>resume Education Edits</b></label>
+                    <table class="table table-dark table-hover">
+                        <thead>
+                            <tr>
+                                <th>Sr No</th>
+                                <th>Education Name</th>
+                                <th>Education Date</th>
+                                <th>University Name</th>
+                                <th>Education Short decription</th>
+
+                                <th colspan="2">Action</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <% for(let i=0; i<resultresume.length ; i++) { %>
+                                    <td>
+                                        <%= i + 1 %>
+                                    </td>
+                                    <td>
+                                        <%= resultresume[i].resume_education_name %>
+                                    </td>
+                              
+                                    <td>
+                                        <%= resultresume[i].resume_education_date %>
+                                    </td>
+                                    <td>
+                                        <%= resultresume[i].resume_university_name %>
+                                    </td>
+                                    <td>
+                                        <%= resultresume[i].resume_education_decript %>
+                                    </td>
+                                  
+                                    <td>
+                                        <a href="/admin/resume_education_edit/<%= resultresume[i].id %>">
+                                            <i class="ti ti-edit text-success h3" title="Go To Edit Page"></i>
+                                        </a>
+
+                                    </td>
+                                    <!-- <td>
+                                       <a href="/admin/resume_top_part_delete/<%= resultresume[i].id %>">
+                                        <i class="ti ti-trash text-success h3" title="Go To Edit Page"></i>
+                                    </a>
+                                </td> -->
+
+
+                            </tr>
+                        </tbody>
+
+                        <% } %>
+                    </table>
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+
+
+     <div class="row bg-white mt-5">
+        <h3 style="font-family:  sans-serif;" class="text-secondary">resume Certifications update page </h3>
+        <h4 class="text-dark">resume Certifications page Update</h4>
+        <div class="col-md-12 " style="border-radius: 20px;box-shadow: inset 0px 0px 10px black;">
+
+            <div class="row p-2">
+                <div class="col text-center" style="height: 420px;overflow: auto;">
+                    <label class="mb-2 pt-2 text-dark "><b>resume Certifications Edits</b></label>
+                    <table class="table table-dark table-hover">
+                        <thead>
+                            <tr>
+                                <th>Sr No</th>
+                                <th>Certifications Name</th>
+                                <th>Certifications Date</th>
+                                
+
+                                <th colspan="2">Action</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <% for(let i=0; i<resultresume.length ; i++) { %>
+                                    <td>
+                                        <%= i + 1 %>
+                                    </td>
+                                    <td>
+                                        <%= resultresume[i].resume_certi_name %>
+                                    </td>
+                              
+                                    <td>
+                                        <%= resultresume[i].resume_certi_date %>
+                                    </td>
+                                  
+                                  
+                                    <td>
+                                        <a href="/admin/resume_certifications_edit/<%= resultresume[i].id %>">
+                                            <i class="ti ti-edit text-success h3" title="Go To Edit Page"></i>
+                                        </a>
+
+                                    </td>
+                                    <!-- <td>
+                                       <a href="/admin/resume_top_part_delete/<%= resultresume[i].id %>">
+                                        <i class="ti ti-trash text-success h3" title="Go To Edit Page"></i>
+                                    </a>
+                                </td> -->
+
+
+                            </tr>
+                        </tbody>
+
+                        <% } %>
+                    </table>
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+
+    <%- include("02.footer.ejs") %>

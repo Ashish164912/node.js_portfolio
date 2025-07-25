@@ -1,0 +1,67 @@
+
+<%- include("01.header.ejs") %>
+
+     <div class="row bg-white mt-4">
+        <h3 style="font-family:  sans-serif;" class="text-secondary">Message List page </h3>
+        
+        <div class="col-md-12 " style="border-radius: 20px;box-shadow: inset 0px 0px 10px black;">
+
+            <div class="row p-2">
+                <div class="col text-center" style="height: 300px;overflow: auto;">
+                    <label class="mb-2 pt-2 text-dark "><b>Check Message</b></label>
+                    <table class="table table-dark table-hover">
+                        <thead>
+                            <tr>
+                                <th>Sr No</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Subject</th>
+                                <th>Message</th>
+                               <th>Action</th>
+                               
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <% for(let i=0; i<message_box_data.length ; i++) { %>
+                                    <td>
+                                        <%= i + 1 %>
+                                    </td>
+                                    <td>
+                                        <%= message_box_data[i].name %>
+                                    </td>
+                                    <td>
+                                        <%= message_box_data[i].email %>
+                                    </td>
+                                  
+                                    <td>
+                                        <%= message_box_data[i].subject %>
+
+                                    </td>
+                                    <td>
+                                        <%= message_box_data[i].message %>
+
+                                    </td>
+                               
+                                    <td>
+                                        <a href="/admin/message_box_delete/<%= message_box_data[i].id %>">
+                                            <i class="ti ti-trash text-success h3" title="Go To Edit Page"></i>
+                                        </a>
+                                    </td>
+
+
+                            </tr>
+                        </tbody>
+
+                        <% } %>
+                    </table>
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+
+    <%- include("02.footer.ejs") %>

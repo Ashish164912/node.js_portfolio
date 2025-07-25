@@ -1,0 +1,73 @@
+<%- include("01.header.ejs") %>
+
+    <div class="row bg-white ">
+        <h3 style="font-family:  sans-serif;" class="text-secondary"></h3>
+        <h4 class="text-secondary mb-2">Resume Details Page</h4>
+        <div class="col-md-12 " style="border-radius: 20px;box-shadow: inset 0px 0px 10px black;">
+            <form action="/admin/update_top_part_resume" method="post" enctype="multipart/form-data">
+
+                <div class="row p-2">
+
+                    <div class="col">
+                        <label class="mb-2 pt-2 text-dark">Resume information</label>
+                        <input type="text" class="form-control border border-danger" name="id" value="<%= resumetop_part.id %>" hidden>
+
+                        <textarea class="form-control border border-danger" name="resume_information">
+                            <%= resumetop_part.resume_information %>
+                        </textarea>
+
+                    </div>
+                </div>
+
+                <div class="row p-2">
+
+                    <div class="col">
+                        <label class="mb-2 pt-2 text-dark">Resume Photo</label>
+                        <input type="file" class="form-control border border-danger" name="resume_photo" value="<%= resumetop_part.resume_photo%>">
+                            <img src="/uploads/<%= resumetop_part.resume_photo %>" alt="" height="40px">
+
+                    </div>
+                    <div class=" col">
+                        <label class="mb-2 pt-2 text-dark">Professional Summary Name</label>
+                        <input type="text" class="form-control border border-danger" name="resume_profe_summary"
+                        value="<%= resumetop_part.resume_profe_summary %>">
+
+                    </div>
+                    <div class="col">
+                        <label class="mb-2 pt-2 text-dark">Professional Summary Description</label>
+                        <input type="text" class="form-control border border-danger" name="resume_prof_sum_decript"
+                        value="<%= resumetop_part.resume_prof_sum_decript %>">
+                    </div>
+
+
+                    <div class="row p-2">
+                        <h4>Contact Information</h4>
+                        <div class="col text-dark">
+                            <label class="mb-2 pt-2 text-dark">Contact Information Name</label>
+                            <input type="text" class="form-control border border-danger" name="resume_contact_info"
+                            value="<%= resumetop_part.resume_contact_info %>">
+
+                        </div>
+
+                        <div class="col text-dark">
+                            <label class="mb-2 pt-2 text-dark">Linkedin Link</label>
+                            <input type="text" class="form-control border border-danger" name="resume_linkedin_url"
+                            value="<%= resumetop_part.resume_linkedin_url %>">
+
+                        </div>
+
+                    </div>
+
+                    <div class="row p-4">
+                        <div class="col text-center">
+
+                            <button class="btn btn-success">update resume</button>
+                        </div>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <%- include("02.footer.ejs") %>

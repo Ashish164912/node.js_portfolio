@@ -1,0 +1,228 @@
+<%- include("01.header.ejs") %>
+
+    <div class="row bg-white ">
+        <h3 style="font-family:  sans-serif;" class="text-secondary">services page </h3>
+        <h4 class="text-dark">Lets Multiple Services</h4>
+        <div class="col-md-12 " style="border-radius: 20px;box-shadow: inset 0px 0px 10px black;">
+            <form action="/admin/services_save_page" method="post" enctype="multipart/form-data">
+
+
+                <div class="row p-2">
+
+                    <div class="col">
+                        <label class="mb-2 pt-2 text-dark">services Icon</label>
+                        <input type="text" class="form-control border border-danger" name="services_icon" required
+                            value="">
+                    </div>
+                    <div class=" col">
+                        <label class="mb-2 pt-2 text-dark">services Name</label>
+                        <input type="text" class="form-control border border-danger" name="services_name" value=""
+                            required>
+                    </div>
+
+                    <div class="row p-2">
+                        <div class="col text-dark">
+                            <label class="mb-2 pt-2 text-dark">services Description</label>
+                            <textarea class="form-control border border-danger" required
+                                name="services_Descript"></textarea>
+                        </div>
+                    </div>
+
+
+                    <div class="row p-2">
+                        <div class="col text-center">
+                            <button class="btn btn-success mt-2">services save Page</button>
+                        </div>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <div class="row bg-white mt-4">
+        <h3 style="font-family:  sans-serif;" class="text-secondary">services List page </h3>
+        <h4 class="text-dark">services page Update</h4>
+        <div class="col-md-12 " style="border-radius: 20px;box-shadow: inset 0px 0px 10px black;">
+
+            <div class="row p-2">
+                <div class="col text-center" style="height: 300px;overflow: auto;">
+                    <label class="mb-2 pt-2 text-dark "><b>services Edits</b></label>
+                    <table class="table table-dark table-hover">
+                        <thead>
+                            <tr>
+                                <th>Sr No</th>
+                                <th>Services Icon</th>
+                                <th>Services Name</th>
+                                <th>Services Description </th>
+                                <th colspan="2">Action</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <% for(let i=0; i<servicesdata.length ; i++) { %>
+                                    <td>
+                                        <%= i + 1 %>
+                                    </td>
+                                    <td>
+                                        <%= servicesdata[i].services_icon %>
+                                    </td>
+                                    <td>
+                                        <%= servicesdata[i].services_name %>
+                                    </td>
+                                    <td>
+                                        <%= servicesdata[i].services_Descript %>
+                                    </td>
+                                    <td>
+                                        <a href="/admin/services_edit/<%= servicesdata[i].id %>">
+                                            <i class="ti ti-edit text-success h3" title="Go To Edit Page"></i>
+                                        </a>
+
+                                    </td>
+                                    <td>
+                                        <a href="/admin/services_delete/<%= servicesdata[i].id %>">
+                                            <i class="ti ti-trash text-success h3" title="Go To Edit Page"></i>
+                                        </a>
+                                    </td>
+
+
+                            </tr>
+                        </tbody>
+
+                        <% } %>
+                    </table>
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+
+    <div class="row bg-white mt-5">
+        <h3 style="font-family:  sans-serif;" class="text-secondary">Reviews page </h3>
+        <h4 class="text-dark">Lets Multiple Reviews</h4>
+        <div class="col-md-12 " style="border-radius: 20px;box-shadow: inset 0px 0px 10px black;">
+            <form action="/admin/reviews_save_page" method="post" enctype="multipart/form-data">
+
+
+                <div class="row p-2">
+
+                    <div class="col">
+                        <label class="mb-2 pt-2 text-dark">Reviews Titile</label>
+                        <input type="text" class="form-control border border-danger" name="reviews_title" required
+                            value="">
+                    </div>
+                </div>
+                <div class="row p-2">
+                    <div class=" col">
+                        <label class="mb-2 pt-2 text-dark">Reviews Person Description</label>
+                        <textarea class="form-control border border-danger" required name="reviews_person_Descript"
+                            required></textarea>
+
+                    </div>
+                </div>
+
+                <div class="row p-2">
+                    <div class="col text-dark">
+                        <label class="mb-2 pt-2 text-dark">Reviews Photo</label>
+                        <input type="file" class="form-control border border-danger" name="reviews_photo">
+                    </div>
+
+                    <div class="col text-dark">
+                        <label class="mb-2 pt-2 text-dark">Reviews Person Name</label>
+                        <input type="text" class="form-control border border-danger" name="reviews_person_name">
+                    </div>
+
+                     <div class="col text-dark">
+                            <label class="mb-2 pt-2 text-dark">Reviews Position</label>
+                            <input type="text" class="form-control border border-danger" name="reviews_position">
+                        </div>
+                </div>
+
+
+                <div class="row p-2">
+                    <div class="col text-center">
+                        <button class="btn btn-success mt-2">reviews save Page</button>
+                    </div>
+                </div>
+
+        </div>
+        </form>
+    </div>
+    </div>
+
+     <div class="row bg-white mt-4">
+        <h3 style="font-family:  sans-serif;" class="text-secondary">reviews List page </h3>
+        <h4 class="text-dark">reviews page Update</h4>
+        <div class="col-md-12 " style="border-radius: 20px;box-shadow: inset 0px 0px 10px black;">
+
+            <div class="row p-2">
+                <div class="col text-center" style="height: 300px;overflow: auto;">
+                    <label class="mb-2 pt-2 text-dark "><b>reviews Edits</b></label>
+                    <table class="table table-dark table-hover">
+                        <thead>
+                            <tr>
+                                <th>Sr No</th>
+                                <th>Reviews Titile</th>
+                                <th>Reviews Person Description</th>
+                                <th>Reviews Photo</th>
+                                <th>Reviews Person Name</th>
+                                <th>Reviews Position</th>
+                                <th colspan="2">Action</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <% for(let i=0; i<reviewsdata.length ; i++) { %>
+                                    <td>
+                                        <%= i + 1 %>
+                                    </td>
+                                    <td>
+                                        <%= reviewsdata[i].reviews_title %>
+                                    </td>
+                                    <td>
+                                        <%= reviewsdata[i].reviews_person_Descript %>
+                                    </td>
+                                    <td>
+                                        
+                                        <img src="/uploads/<%= reviewsdata[i].reviews_photo %>" alt="" height="50px">
+                                    </td>
+                                    <td>
+                                        <%= reviewsdata[i].reviews_person_name %>
+
+                                    </td>
+                                    <td>
+                                        <%= reviewsdata[i].reviews_position %>
+
+                                    </td>
+                                    <td>
+                                        <a href="/admin/reviews_edit/<%= reviewsdata[i].id %>">
+                                            <i class="ti ti-edit text-success h3" title="Go To Edit Page"></i>
+                                        </a>
+
+                                    </td>
+                                    <td>
+                                        <a href="/admin/reviews_delete/<%= reviewsdata[i].id %>">
+                                            <i class="ti ti-trash text-success h3" title="Go To Edit Page"></i>
+                                        </a>
+                                    </td>
+
+
+                            </tr>
+                        </tbody>
+
+                        <% } %>
+                    </table>
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+
+    <%- include("02.footer.ejs") %>

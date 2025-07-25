@@ -1,0 +1,54 @@
+<%- include("01.header.ejs") %>
+  
+    <div class="row bg-white ">
+        <h3 style="font-family:  sans-serif;" class="text-secondary">Portfolio Update page </h3>
+           <h4 class="text-dark">IT Updated Works</h4>
+        <div class="col-md-12 " style="border-radius: 20px;box-shadow: inset 0px 0px 10px black;">
+            <form action="/admin/portfolio_update_page" method="post" enctype="multipart/form-data">
+
+              <div class="row p-2">
+                 
+                    <div class="col">
+                        <label class="mb-2 pt-2 text-dark">Portfolio Description</label>
+                        <input type="text" class="form-control border border-danger" name="id"
+                            value="<%= portfolioresult.id %>" hidden>
+                        <textarea class="form-control border border-danger" name="Portfolio_Descript"
+                            ><%= portfolioresult.Portfolio_Descript %></textarea>
+                    </div>
+              </div>  
+                
+                <div class="row p-2">
+                 
+                    <div class="col">
+                        <label class="mb-2 pt-2 text-dark">Portfolio Works Photo</label>
+                        <input type="file" class="form-control border border-danger" name="portfolio_photo"
+                            value="<%= portfolioresult.Portfolio_photo %>">
+                    </div>
+                  
+
+                    <div class=" col">
+                        <label class="mb-2 pt-2 text-dark">portfolio project Name</label>
+                        <input type="text" class="form-control border border-danger" name="portfolio_proj_name"
+                            value="<%= portfolioresult.portfolio_proj_name %>">
+                    </div>
+                    <div class="col">
+                        <label class="mb-2 pt-2 text-dark">Works Name</label>
+                        <input type="text" class="form-control border border-danger" name="portfolio_works_name"
+                            value="<%= portfolioresult.portfolio_works_name %>">
+                    </div>
+
+                 
+
+                        <div class="row p-2">
+                            <div class="col text-center">
+                                <button class="btn btn-success mt-2">portfolio Update Page</button>
+                            </div>
+                        </div>
+
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <%- include("02.footer.ejs") %>

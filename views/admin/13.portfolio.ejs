@@ -1,0 +1,106 @@
+<%- include("01.header.ejs") %>
+  
+    <div class="row bg-white ">
+        <h3 style="font-family:  sans-serif;" class="text-secondary">Portfolio page </h3>
+           <h4 class="text-dark">IT Works</h4>
+        <div class="col-md-12 " style="border-radius: 20px;box-shadow: inset 0px 0px 10px black;">
+            <form action="/admin/portfolio_save_page" method="post" enctype="multipart/form-data">
+
+              <div class="row p-2">
+                 
+                    <div class="col">
+                        <label class="mb-2 pt-2 text-dark">Portfolio Description</label>
+                        <textarea class="form-control border border-danger" name="Portfolio_Descript" required
+                            value=""></textarea>
+                    </div>
+              </div>  
+                
+                <div class="row p-2">
+                 
+                    <div class="col">
+                        <label class="mb-2 pt-2 text-dark">Portfolio Works Photo</label>
+                        <input type="file" class="form-control border border-danger" name="portfolio_photo" required
+                            value="">
+                    </div>
+                    <div class=" col">
+                        <label class="mb-2 pt-2 text-dark">portfolio project Name</label>
+                        <input type="text" class="form-control border border-danger" name="portfolio_proj_name" required
+                            value="">
+                    </div>
+                    <div class="col">
+                        <label class="mb-2 pt-2 text-dark">Works Name</label>
+                        <input type="text" class="form-control border border-danger" name="portfolio_works_name" required
+                            value="">
+                    </div>
+
+                 
+
+                        <div class="row p-2">
+                            <div class="col text-center">
+                                <button class="btn btn-success mt-2">portfolio save Page</button>
+                            </div>
+                        </div>
+
+                </div>
+            </form>
+        </div>
+    </div>
+
+     <div class="row bg-white mt-4">
+        <h3 style="font-family:  sans-serif;" class="text-secondary">Portfolio List page </h3>
+           <h4 class="text-dark">Portfolio page Update</h4>
+        <div class="col-md-12 " style="border-radius: 20px;box-shadow: inset 0px 0px 10px black;">
+           
+                <div class="row p-2">
+                    <div class="col text-center" style="height: 420px;overflow: auto;">
+                        <label class="mb-2 pt-2 text-dark "><b>Portfolio Edits</b></label>
+                        <table class="table table-dark table-hover">
+                            <thead>
+                                 <tr >
+                            <th>Sr No</th>
+                            <th>Portfolio Description</th>
+                            <th>Portfolio works Photo</th>
+                            <th>portfolio project Name </th>
+                            <th>Works Name</th>
+                            <th colspan="2">Action</th>
+                          </tr>
+                            </thead>
+                         
+                         <tbody>
+                              <tr>
+                                       <% for(let i=0; i<portfoliodata.length ; i++) { %>
+                                <td><%= i + 1 %></td>
+                                <td><%= portfoliodata[i].Portfolio_Descript %></td>
+                                <td>
+                                <img src="/uploads/<%= portfoliodata[i].portfolio_photo %>" height="80px">
+                                </td>
+                                <td><%= portfoliodata[i].portfolio_proj_name %></td>
+                                <td><%= portfoliodata[i].portfolio_works_name %></td>
+                                <td>
+                                    <a href="/admin/portfolio_edit/<%= portfoliodata[i].id %>">
+                                        <i class="ti ti-edit text-success h3" title="Go To Edit Page"></i>
+                                    </a>
+                                   
+                                </td>
+                                <td>
+                                       <a href="/admin/portfolio_delete/<%= portfoliodata[i].id %>">
+                                        <i class="ti ti-trash text-success h3" title="Go To Edit Page"></i>
+                                    </a>
+                                </td>
+
+                              
+                          </tr>
+                         </tbody>
+                    
+                            <% } %>
+                        </table>
+                    </div>
+                   
+
+                </div>
+        
+        </div>
+    </div>
+    
+
+<%- include("02.footer.ejs") %>

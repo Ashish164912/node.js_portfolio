@@ -1,0 +1,72 @@
+<%- include("01.header.ejs") %>
+  
+     <div class="row bg-white " >
+            <h4 style="font-family:  sans-serif;">Home Page</h4>
+            <div class="col-md-12 " style="border-radius: 20px;box-shadow: inset 0px 0px 10px black;">
+                <form action="/admin/save_home_page" method="post" enctype="multipart/form-data">
+                    <div class="row p-2">
+                        <div class="col">
+                            <label class="mb-2 pt-2 text-dark">Name</label>
+                            <input type="text" class="form-control border border-danger" name="Home_name" 
+                            value="<%= result.Home_name %>">
+                        </div>
+                        <div class=" col">
+                            <label class="mb-2 pt-2 text-dark">Position</label>
+                            <input type="text" class="form-control border border-danger" name="Home_position"
+                            value="<%= result.Home_position %>">
+                        </div>
+                        <div class="col">
+                            <label class="mb-2 pt-2 text-dark">Photo</label>
+                            <input type="file" class="form-control border border-danger" name="Home_photo"
+                            value="<%= result.Home_photo %>">
+                        </div>
+                        <div class="col">
+                          
+                          <img src="/uploads/<%= result.Home_photo %>" style="height: 50px;"> 
+                       
+                        </div>
+
+                    </div>
+
+                    <div class="row p-2">
+                        <div class="col">
+                            <label class="mb-2 text-dark">Whatsapp</label>
+                            <input type="text" class="form-control border border-danger" name="Home_Whatsapp" value="<%= result.Home_Whatsapp %>">
+                        </div>
+                        <div class=" col">
+                            <label class="mb-2 text-dark">instagram</label>
+                            <input type="text" class="form-control border border-danger" name="Home_instagram" value="<%= result.Home_instagram %>">
+                        </div>
+                        <div class="col">
+                            <label class="mb-2 text-dark">Facebook</label>
+                            <input type="text" class="form-control border border-danger" name="Home_Facebook" value="<%= result.Home_Facebook %>">
+                        </div>
+                        <div class="col">
+                            <label class="mb-2 text-dark">Github</label>
+                            <input type="text" class="form-control border border-danger" name="Home_Github" value="<%= result.Home_Github %>">
+                        </div>
+                        <div class="col">
+                            <label class="mb-2 text-dark">Linkedin</label>
+                            <input type="text" class="form-control border border-danger" name="Home_Linkedin" value="<%= result.Home_Linkedin %>">
+                        </div>
+
+                        <div class="row p-2">
+                            <div class="col">
+                                <label class="mb-2 text-dark">Description</label>
+                                <textarea class="form-control border border-danger" name="Home_Descrip" ><%= result.Home_Descrip %></textarea>
+                            </div>
+
+                            <div class="row p-2">
+                                <div class="col text-center">
+                                    <button class="btn btn-success mt-2">Update Home Page</button>
+                                </div>
+                            </div>
+
+                        </div>
+                </form>
+            </div>
+        </div>
+
+
+<%- include("02.footer.ejs") %>
+

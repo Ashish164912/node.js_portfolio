@@ -1,0 +1,49 @@
+<%- include("01.header.ejs") %>
+
+    <div class="row bg-white ">
+        <h3 style="font-family:  sans-serif;" class="text-secondary">services update page </h3>
+        <h4 class="text-dark">Lets Multiple Services update</h4>
+        <div class="col-md-12 " style="border-radius: 20px;box-shadow: inset 0px 0px 10px black;">
+            <form action="/admin/services_update_page" method="post" enctype="multipart/form-data">
+
+
+                <div class="row p-2">
+                    
+                  
+
+                    <div class="col">
+                        <label class="mb-2 pt-2 text-dark">services Icon</label>
+                        <input type="text" class="form-control border border-danger"  name="id" 
+                        value="<%= result.id %>" hidden >
+                         <input type="text" class="form-control border border-danger"  name="services_icon" 
+                        value="<%= result.services_icon %>" >
+                    </div>
+                    <div class=" col">
+                        <label class="mb-2 pt-2 text-dark">services Name</label>
+                        <input type="text" class="form-control border border-danger" name="services_name"
+                             value="<%= result.services_name %>" >
+                    </div>
+
+                    <div class="row p-2">
+                        <div class="col text-dark">
+                            <label class="mb-2 pt-2 text-dark">services Description</label>
+                            <textarea class="form-control border border-danger" name="services_Descript">
+                                 <%= result.services_Descript %>
+                            </textarea>
+                        </div>
+                    </div>
+
+
+                    <div class="row p-2">
+                        <div class="col text-center">
+                            <button class="btn btn-success mt-2">services update Page</button>
+                        </div>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+      <%- include("02.footer.ejs") %>

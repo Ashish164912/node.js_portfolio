@@ -1,0 +1,47 @@
+ <%- include("01.header.ejs") %>
+ 
+ <div class="row bg-white mt-4">
+        <h3 style="font-family:  sans-serif;" class="text-secondary">Back-end Update Skill page </h3>
+           <h4 class="text-dark">Back-end Development skill</h4>
+        <div class="col-md-12 " style="border-radius: 20px;box-shadow: inset 0px 0px 10px black;">
+            <form action="/admin/back_end_update_skill_page" method="post" enctype="multipart/form-data">
+                <div class="row p-2">
+                     <div class="col">
+                        <label class="mb-2 pt-2 text-dark">ID</label>
+                        <input type="text" class="form-control border border-danger" name="id" value="<%= B_result.id %>">
+                                  </div>
+                    <div class="col">
+                        <label class="mb-2 pt-2 text-dark">Back-end skill Title</label>
+                        <input type="text" class="form-control border border-danger" name="skill_B_title"
+                          value="<%= B_result.skill_B_title %>"  >
+                    </div>
+                    <div class=" col">
+                        <label class="mb-2 pt-2 text-dark">technologies</label>
+                        <input type="text" class="form-control border border-danger" name="skill_B_technology"
+                          value="<%= B_result.skill_B_technology %>"  >
+                    </div>
+                    <div class="col">
+                        <label class="mb-2 pt-2 text-dark">progress bar Rang</label>
+                        <input type="number" class="form-control border border-danger" name="skill_B_pro_bar_rang"
+                           value="<%= B_result.skill_B_pro_bar_rang %>" >
+                    </div>
+
+                    <div class="col">
+                        <label class="mb-2 pt-2 text-dark">technologies Decript</label>
+                        <input type="text" class="form-control border border-danger" name="skill_B_Decript"
+                          value="<%= B_result.skill_B_Decript %>"  >
+                    </div>
+
+                        <div class="row p-2">
+                            <div class="col text-center">
+                                <button class="btn btn-success mt-2">Back-end Update skill Page</button>
+                            </div>
+                        </div>
+
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <%- include("02.footer.ejs") %>
